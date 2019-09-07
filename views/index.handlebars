@@ -1,0 +1,37 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Fluid jumbotron</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Summary</th>
+                        <th scope="col">URL</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each articles}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{body}}</td>
+                        <td>{{url}}</td>
+                        <td>
+                            <a type="button" class="btn btn-primary product-button" href="#"
+                                id="save-btn">Favoriate</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
