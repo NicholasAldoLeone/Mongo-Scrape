@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Favoriates Page</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <a type="button" class="btn btn-primary" href="/">Return to Hompage</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {{#each favoriates}}
+        <div class="col-md-6 offset-md-0.5" >
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-{{_id}}">{{title}}</h5>
+                    <p class="card-text" id = "summary-{{_id}}">{{summary}}</p>
+                    <button class="btn btn-primary product-button" id="delete-btn" value="{{_id}}">Remove</button>
+                </div>
+                <ul class="list-group list-group-flush">
+                </ul>
+                <div class="card-body">
+                    <a href="{{url}}" class="card-link" id="title-{{_id}}">{{url}}</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

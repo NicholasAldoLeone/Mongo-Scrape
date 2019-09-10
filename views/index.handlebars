@@ -1,37 +1,29 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
+        <h1 class="display-4">Articles Page</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <a type="button" class="btn btn-primary" href="/api/favoriates">Your Favoriates</a>
+        <a type="button" class="btn btn-primary" href="/api/scrape">Data</a>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Summary</th>
-                        <th scope="col">URL</th>
-                        <th scope="col"> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each articles}}
-                    <tr>
-                        <td>{{title}}</td>
-                        <td>{{body}}</td>
-                        <td>{{url}}</td>
-                        <td>
-                            <a type="button" class="btn btn-primary product-button" href="#"
-                                id="save-btn">Favoriate</a>
-                        </td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-
+        {{#each articles}}
+        <div class="col-md-6 offset-md-0.5" >
+            <div class="card" style="width: 100%; margin-bottom: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title" id = "title-{{_id}}">{{title}}</h5>
+                    <p class="card-text" id = "summary-{{_id}}">{{summary}}</p>
+                    <button class="btn btn-primary product-button" id="save-btn" value="{{_id}}">Favoriate</button>
+                </div>
+                <ul class="list-group list-group-flush">
+                </ul>
+                <div class="card-body">
+                    <a href="{{url}}" class="card-link" id="url-{{_id}}">{{url}}</a>
+                </div>
+            </div>
         </div>
+        {{/each}}
     </div>
 </div>
